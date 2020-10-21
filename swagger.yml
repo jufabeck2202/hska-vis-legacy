@@ -1,0 +1,580 @@
+swagger: "2.0"
+info:
+  description: "eShop eShop Web Anwendung API description"
+  version: "1.0.0"
+  title: "eShop API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "beju1025-sito1014@hs-karlsruhe.de"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+
+tags:
+- name: "product"
+  description: "manage products"
+- name: "category"
+  description: "manage category"
+- name: "user"
+  description: "manage user"
+- name: "product maintenance"
+  description: "manage category"
+ 
+schemes:
+- "https"
+- "http"
+
+paths:
+  /hidden/product:
+    get:
+      tags:
+      - "product"
+      summary: "return list of all Products"
+      description: "return list of all Products"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "todo -> list of all product"
+    
+    post:
+      tags:
+      - "product"
+      summary: "add product"
+      description: "add product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productname"
+        in: "formData"
+        description: "productname"
+        required: true
+        type: "string"
+      - name: "price"
+        in: "formData"
+        description: "price"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "categoryID"
+        in: "formData"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "description "
+        in: "formData"
+        description: "description"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> product id"
+          
+  /hidden/product/id/{productID}:
+    get:
+      tags:
+      - "product"
+      summary: "return Product"
+      description: "return Product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "productID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> product"
+          
+    delete:
+      tags:
+      - "product"
+      summary: "delete Product"
+      description: "delete Product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "productID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> product"
+          
+  /hidden/product/category/id/{categoryID}:
+    get:
+      tags:
+      - "product"
+      summary: "return list of Products for given Category"
+      description: "return list of Products for given Category"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryID"
+        in: "path"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> list of products"
+          
+  /hidden/product/search:
+    get:
+      tags:
+      - "product"
+      summary: "list all products for given query"
+      description: "list all products for given query"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "text"
+        in: "formData"
+        description: "text"
+        required: true
+        type: "string"
+      - name: "pricemin"
+        in: "formData"
+        description: "pricemin"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "pricemax"
+        in: "formData"
+        description: "pricemax"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "categoryID"
+        in: "formData"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> product list"
+   
+#===========================================================
+  /hidden/category:
+    get:
+      tags:
+      - "category"
+      summary: "return list of all categories"
+      description: "return list of all categories"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "todo -> list of all categories"
+    
+    post:
+      tags:
+      - "category"
+      summary: "add categories"
+      description: "add categories"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryname"
+        in: "formData"
+        description: "categoryname"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> category id"
+          
+  /hidden/category/id/{categoryID}:
+    get:
+      tags:
+      - "category"
+      summary: "return Category"
+      description: "return Category"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryID"
+        in: "path"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> Category"
+          
+    delete:
+      tags:
+      - "category"
+      summary: "return Category"
+      description: "return Category"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryID"
+        in: "path"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> Category"
+ 
+#===========================================================
+  /user/id/{userID}:
+    get:
+      tags:
+      - "user"
+      summary: "return user"
+      description: "return user"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userID"
+        in: "path"
+        description: "userID"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> return user"
+          
+    delete:
+      tags:
+      - "user"
+      summary: "return user"
+      description: "return user"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userID"
+        in: "path"
+        description: "userID"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> return user"
+      
+  /user/id/{userID}/role:
+    get:
+      tags:
+      - "user"
+      summary: "return users role"
+      description: "return users role"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userID"
+        in: "path"
+        description: "userID"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> return users role"
+          
+  /user/name/{userName}:
+    get:
+      tags:
+      - "user"
+      summary: "return users id"
+      description: "return users id"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userName"
+        in: "path"
+        description: "userName"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> return users id"
+ 
+  /user/regist:
+    post:
+      tags:
+      - "user"
+      summary: "add user"
+      description: "add user"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "firstname"
+        in: "formData"
+        description: "firstname"
+        required: true
+        type: "string"
+      - name: "lastname"
+        in: "formData"
+        description: "lastname"
+        required: true
+        type: "string"
+      - name: "username"
+        in: "formData"
+        description: "username"
+        required: true
+        type: "string"
+      - name: "pwd"
+        in: "formData"
+        description: "pwd"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> user id"  
+ 
+#===========================================================       
+  /search:
+    post:
+      tags:
+      - "product maintenance"
+      summary: "search Product"
+      description: "search Product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "text"
+        in: "formData"
+        description: "text"
+        required: true
+        type: "string"
+      - name: "pricemin"
+        in: "formData"
+        description: "pricemin"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "pricemax"
+        in: "formData"
+        description: "pricemax"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "categoryName"
+        in: "formData"
+        description: "categoryName"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> product list"        
+ 
+  /product:
+    get:
+      tags:
+      - "product maintenance"
+      summary: "return list of all Products"
+      description: "return list of all Products"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "todo -> list of all product"
+    post:
+      tags:
+      - "product maintenance"
+      summary: "add product"
+      description: "add product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productname"
+        in: "formData"
+        description: "productname"
+        required: true
+        type: "string"
+      - name: "price"
+        in: "formData"
+        description: "price"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "categoryID"
+        in: "formData"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "description "
+        in: "formData"
+        description: "description"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> product id"                
+
+  /product/id/{productID}:
+    get:
+      tags:
+      - "product maintenance"
+      summary: "return Product"
+      description: "return Product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "productID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> product"
+          
+    delete:
+      tags:
+      - "product maintenance"
+      summary: "delete Product"
+      description: "delete Product"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productID"
+        in: "path"
+        description: "productID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> product"
+        
+  /category/id/{categoryID}:
+    get:
+      tags:
+      - "product maintenance"
+      summary: "return Category"
+      description: "return Category"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryID"
+        in: "path"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> Category"
+          
+    delete:
+      tags:
+      - "product maintenance"
+      summary: "return Category"
+      description: "return Category"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryID"
+        in: "path"
+        description: "categoryID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "todo -> Category"
+
+  /category:
+    get:
+      tags:
+      - "product maintenance"
+      summary: "return list of all categories"
+      description: "return list of all categories"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "todo -> list of all categories"
+    
+    post:
+      tags:
+      - "product maintenance"
+      summary: "add categories"
+      description: "add categories"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "categoryname"
+        in: "formData"
+        description: "categoryname"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "todo -> category id"
+
+
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
