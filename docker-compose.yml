@@ -1,0 +1,6 @@
+version: '3'
+services:
+  products-core:
+    build: ProductCore/
+    ports: 
+      - 8002:8002
