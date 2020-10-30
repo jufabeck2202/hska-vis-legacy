@@ -1,6 +1,16 @@
 version: '3'
 services:
-  products-core:
-    build: ProductCore/
+  eureka:
+    build: eureka/
     ports: 
-      - 8002:8002
+      - 8761:8761
+
+  turbine:
+    build: turbine/
+    ports: 
+      - 8082:8082
+    depends_on:
+      - eureka
+    links:
+      - eureka
+    restart: on-failure
