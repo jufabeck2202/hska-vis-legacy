@@ -4,6 +4,16 @@ services:
     build: eureka/
     ports: 
       - 8761:8761
+    
+  products-core:
+    build: productcore/
+    ports: 
+      - 8002:8002 
+    depends_on:
+      - eureka
+    links:
+      - eureka
+    restart: always
 
   turbine:
     build: turbine/
