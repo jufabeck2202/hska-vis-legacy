@@ -10,9 +10,7 @@ public class ProductcoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductcoreApplication.class, args);
-		while (true) {
-			System.out.println("beju ist besser im kicker als tobi");
-		}
+
 	}
 
 }
