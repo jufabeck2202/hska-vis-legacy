@@ -1,0 +1,21 @@
+server:
+  port: 8081
+  
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+
+    zuul:
+  ignoredServices: '*'
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    productscomposite-services:
+      path: /productscomposite-services/**
+    products-core-service:
+      path: /products-core-service/**
+    users-core-service:
+      path: /**
+    category-core-service:
+      path: /category-core-service/**

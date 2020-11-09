@@ -5,7 +5,7 @@ services:
     ports: 
       - 8761:8761
     
-  products-core:
+  product-core:
     build: productcore/
     ports: 
       - 8012:8012 
@@ -16,6 +16,39 @@ services:
       - eureka
     restart: always
 
+  user-core:
+    build: usercore/
+    ports: 
+      - 8001:8001 
+    depends_on:
+      - eureka
+      - turbine
+    links:
+      - eureka
+    restart: always
+
+  category-core:
+    build: categorycore/
+    ports: 
+      - 8003:8003 
+    depends_on:
+      - eureka
+      - turbine
+    links:
+      - eureka
+    restart: always
+
+  product-composite:
+    build: productcomposite/
+    ports: 
+      - 8004:8004
+    depends_on:
+      - eureka
+      - category-core
+      - product-core
+    links:
+      - eureka
+
   turbine:
     build: turbine/
     ports: 
@@ -25,3 +58,12 @@ services:
     links:
       - eureka
     restart: always
+  zuul:
+    build: zuul/
+    ports: 
+      - 8081:8081
+    depends_on:
+      - eureka
+      - product-composite
+    links:
+      - eureka

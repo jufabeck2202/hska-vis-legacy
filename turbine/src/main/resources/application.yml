@@ -10,7 +10,7 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka:8761/eureka/
     healthcheck:
-      enabled: yes
+      enabled: no
     lease:
       duration: 5
 
