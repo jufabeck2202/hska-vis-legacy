@@ -21,9 +21,6 @@ public class ProductcompositeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductcompositeApplication.class, args);
 
-		while (true) {
-			
-		}
 	}
 
 }

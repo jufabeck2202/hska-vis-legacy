@@ -10,9 +10,7 @@ public class UsercoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UsercoreApplication.class, args);
-		while (true) {
-			
-		}
 	}
 
 }
+

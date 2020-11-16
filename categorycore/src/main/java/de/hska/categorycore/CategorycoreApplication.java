@@ -10,9 +10,7 @@ public class CategorycoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CategorycoreApplication.class, args);
-		while (true) {
 
-		}
 	}
 
 }
