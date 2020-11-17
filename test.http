@@ -100,3 +100,8 @@ content-type: application/json
 ####
 DELETE  http://localhost:8001/users/1
 Cache-Control: no-cache
+#### Product Composite Service
+
+GET http://localhost:8004/products
+Cache-Control: no-cache
+####

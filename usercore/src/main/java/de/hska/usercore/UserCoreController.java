@@ -35,15 +35,6 @@ public class UserCoreController {
 	}
 	
 	
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public ResponseEntity<User> getUserByName(@RequestParam("username") String username, HttpServletRequest request) {
-		List<User> userList = repo.findByUsername(username);
-		if(userList.size() >= 1) {
-			return new ResponseEntity<User>(userList.get(0), HttpStatus.OK);
-		} else {
-			return new ResponseEntity<User>(new User(), HttpStatus.NOT_FOUND);
-		}
-	}
 	
 	@RequestMapping(value = "/users/name/{name}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUserByName(@PathVariable String name) {
