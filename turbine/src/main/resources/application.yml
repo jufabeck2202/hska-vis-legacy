@@ -16,5 +16,9 @@ eureka:
 
 turbine:
   clusterNameExpression: new String("default")
-  appConfig: PRODUCTS-COMP-SERVICE
+  appConfig: productscomposite-service
   combineHostPort: true
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"

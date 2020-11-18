@@ -14,3 +14,4 @@ public class TurbineApplication {
 	}
 
 }
+// localhost:8004/actuator/hystrix.stream

@@ -33,8 +33,8 @@ import de.hska.productcomposite.model.Category;
 
 @Component
 public class ProductCompositeClient {
-	private static String PRODUCTS_URI = "http://localhost:8012/products";
-	private static String CATEGORIES_URI = "http://localhost:8003/categories";
+	private static String PRODUCTS_URI = "http://product-core:8012/products";
+	private static String CATEGORIES_URI = "http://category-core:8003/categories";
 	
 	private final Map<Long, Double> productPriceCache = new LinkedHashMap<Long, Double>();
 	private final Map<Long, String> productDescCache = new LinkedHashMap<Long, String>();
@@ -79,7 +79,8 @@ public class ProductCompositeClient {
 	public Product[] getProductsCache(String description, String minPrice, String maxPrice) {
 		List<Product> list = new ArrayList<>();
 		if(description == null && minPrice == null && maxPrice == null) {
-			return (Product[]) productCache.values().toArray();
+			 Product[] array = productCache.values().toArray(new Product[productCache.values().size()]);
+			 return array;
 		}
 		if(description != null && productDescCache.containsValue(description)) {
 			for(Long key : getKeysByValue(productDescCache, description)) {

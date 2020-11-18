@@ -100,8 +100,31 @@ content-type: application/json
 ####
 DELETE  http://localhost:8001/users/1
 Cache-Control: no-cache
+
+
 #### Product Composite Service
 
 GET http://localhost:8004/products
+Cache-Control: no-cache
+####
+
+#### Zuuuul
+
+POST  http://localhost:8081/products-core-service/products/
+content-type: application/json
+
+{
+  "name": "update",
+  "price": 100.0,
+  "categoryId": 1,
+  "details": "this detail"
+}
+
+###
+GET http://localhost:8081/products-core-service/products/
+Cache-Control: no-cache
+####
+
+GET http://localhost:8081/productscomposite-services/products/
 Cache-Control: no-cache
 ####
