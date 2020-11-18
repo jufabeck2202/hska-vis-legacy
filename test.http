@@ -125,6 +125,6 @@ GET http://localhost:8081/products-core-service/products/
 Cache-Control: no-cache
 ####
 
-GET http://localhost:8081/productscomposite-services/products/
+GET http://localhost:8081/productscomposite-service/products/
 Cache-Control: no-cache
 ####
