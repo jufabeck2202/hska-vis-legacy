@@ -34,12 +34,12 @@ import de.hska.productcomposite.model.Category;
 @Component
 public class ProductCompositeClient {
 	// über ribbon
-	//private static String PRODUCTS_URI = "http://product-core-service/products";
-	//private static String CATEGORIES_URI = "http://category-core-service/categories";
+	private static String PRODUCTS_URI = "http://products-core-service/products";
+	private static String CATEGORIES_URI = "http://category-core-service/categories";
 	
 	//über docker url
-	private static String PRODUCTS_URI = "http://product-core:8012/products";
-	private static String CATEGORIES_URI = "http://category-core:8003/categories";
+	//private static String PRODUCTS_URI = "http://product-core:8012/products";
+	//private static String CATEGORIES_URI = "http://category-core:8003/categories";
 	
 	private final Map<Long, Double> productPriceCache = new LinkedHashMap<Long, Double>();
 	private final Map<Long, String> productDescCache = new LinkedHashMap<Long, String>();
@@ -47,12 +47,6 @@ public class ProductCompositeClient {
 	
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	@Bean
-	public RestTemplate restTemplate() {
-	   RestTemplate restTemplate = new RestTemplate();
-	   return restTemplate;
-	}
 	
 	@HystrixCommand(fallbackMethod = "getProductsCache", 
 			commandProperties = { @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "2") })

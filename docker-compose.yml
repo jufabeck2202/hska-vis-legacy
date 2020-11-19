@@ -4,6 +4,10 @@ services:
     build: eureka/
     ports: 
       - 8761:8761
+    networks:
+      services-network-01:
+        aliases:
+          - eureka
     
   product-core:
     build: productcore/
@@ -15,6 +19,10 @@ services:
     links:
       - eureka
     restart: always
+    networks:
+      services-network-01:
+        aliases:
+          - product-core
 
   user-core:
     build: usercore/
@@ -26,6 +34,10 @@ services:
     links:
       - eureka
     restart: always
+    networks:
+      services-network-01:
+        aliases:
+          - user-core
 
   category-core:
     build: categorycore/
@@ -37,6 +49,10 @@ services:
     links:
       - eureka
     restart: always
+    networks:
+      services-network-01:
+        aliases:
+          - category-core
 
   product-composite:
     build: productcomposite/
@@ -48,6 +64,10 @@ services:
       - product-core
     links:
       - eureka
+    networks:
+      services-network-01:
+        aliases:
+          - product-composite
 
   turbine:
     build: turbine/
@@ -58,6 +78,10 @@ services:
     links:
       - eureka
     restart: always
+    networks:
+      services-network-01:
+        aliases:
+          - turbine
   zuul:
     build: zuul/
     ports: 
@@ -67,3 +91,12 @@ services:
       - product-composite
     links:
       - eureka
+    networks:
+      services-network-01:
+        aliases:
+          - zuul
+
+networks:
+  services-network-01:
+    name: services-network-01
+    driver: bridge
