@@ -22,3 +22,4 @@ turbine:
 hystrix:
   dashboard:
     proxy-stream-allow-list: "*"
+#product-composite http://product-composite:8004/actuator/hystrix.stream

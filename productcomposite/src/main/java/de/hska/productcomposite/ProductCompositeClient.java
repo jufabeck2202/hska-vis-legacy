@@ -33,6 +33,8 @@ import de.hska.productcomposite.model.Category;
 
 @Component
 public class ProductCompositeClient {
+	//private static String PRODUCTS_URI = "http://product-core-service/products";
+	//private static String CATEGORIES_URI = "http://category-core-service/categories";
 	private static String PRODUCTS_URI = "http://product-core:8012/products";
 	private static String CATEGORIES_URI = "http://category-core:8003/categories";
 	
