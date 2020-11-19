@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: turbine
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+    healthcheck:
+      enabled: no
+    lease:
+      duration: 5
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: productscomposite-service
+  combineHostPort: true
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+#product-composite http://product-composite:8004/actuator/hystrix.stream

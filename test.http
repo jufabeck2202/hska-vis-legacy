@@ -1,0 +1,130 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://localhost:8003/categories/1
+Cache-Control: no-cache
+###
+
+GET http://localhost:8003/categories
+Cache-Control: no-cache
+###
+
+POST http://localhost:8003/categories 
+content-type: application/json
+
+{
+    "name": "name",
+    "productIds": "test"
+}
+
+###
+
+DELETE http://localhost:8003/categories/1
+Cache-Control: no-cache
+###
+
+### Product ###
+
+GET http://localhost:8012/products/
+Cache-Control: no-cache
+####
+
+GET http://localhost:8012/products/1
+Cache-Control: no-cache
+####
+
+POST http://localhost:8012/products 
+content-type: application/json
+
+{
+  "name": "test",
+  "price": 100.0,
+  "categoryId": 1,
+  "details": "this detail"
+}
+###
+
+PUT  http://localhost:8012/products/1
+content-type: application/json
+
+{
+   "id": 1,
+  "name": "update",
+  "price": 100.0,
+  "categoryId": 1,
+  "details": "this detail"
+}
+
+###
+DELETE http://localhost:8012/products/1
+Cache-Control: no-cache
+###
+
+
+### User ###
+GET http://localhost:8001/users/name/beju
+Cache-Control: no-cache
+####
+
+GET http://localhost:8001/users/1
+Cache-Control: no-cache
+####
+POST   http://localhost:8001/users/
+content-type: application/json
+
+{
+   "username": "beju",
+  "firstname": "be",
+   "lastname": "ju",
+  "password": "kickerking",
+  "roletype": "admin",
+  "rolelevel": 1
+}
+####
+PUT   http://localhost:8001/users/1
+content-type: application/json
+
+{
+    "id": 1,
+   "username": "neju",
+  "firstname": "be",
+   "lastname": "ju",
+  "password": "kickerking",
+  "roletype": "admin",
+  "rolelevel": 1
+}
+####
+DELETE  http://localhost:8001/users/1
+Cache-Control: no-cache
+
+
+#### Product Composite Service
+
+GET http://localhost:8004/products
+Cache-Control: no-cache
+####
+
+#### Zuuuul
+
+POST  http://localhost:8081/products-core-service/products/
+content-type: application/json
+
+{
+  "name": "update",
+  "price": 100.0,
+  "categoryId": 1,
+  "details": "this detail"
+}
+
+###
+GET http://localhost:8081/products-core-service/products/
+Cache-Control: no-cache
+####
+
+GET http://localhost:8081/productscomposite-service/products/
+Cache-Control: no-cache
+####
