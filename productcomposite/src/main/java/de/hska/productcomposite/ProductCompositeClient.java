@@ -62,11 +62,13 @@ public class ProductCompositeClient {
 			builder.queryParam("maxPrice", maxPrice);
 		}
 		String uri = builder.toUriString();
+
 		ResponseEntity<Product[]> prod = restTemplate.getForEntity(uri, Product[].class);
 		for(Product p : prod.getBody()) {
 			ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+p.getCategoryId()), Category.class);
 			p.setCategory(c.getBody());
 			productCache.putIfAbsent(p.getId(), p);
+			//save query results  filderd by description and price
 			productDescCache.putIfAbsent(p.getId(), p.getDetails());
 			productPriceCache.putIfAbsent(p.getId(), p.getPrice());
 		}

@@ -5,6 +5,12 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 
+
+################################################
+
+#Category core
+
+################################################
 GET http://localhost:8003/categories/1
 Cache-Control: no-cache
 ###
@@ -27,7 +33,11 @@ DELETE http://localhost:8003/categories/1
 Cache-Control: no-cache
 ###
 
-### Product ###
+################################################
+
+#Product core
+
+################################################
 
 GET http://localhost:8012/products/
 Cache-Control: no-cache
@@ -65,7 +75,11 @@ Cache-Control: no-cache
 ###
 
 
-### User ###
+################################################
+
+#user core
+
+################################################
 GET http://localhost:8001/users/name/beju
 Cache-Control: no-cache
 ####
@@ -102,11 +116,11 @@ DELETE  http://localhost:8001/users/1
 Cache-Control: no-cache
 
 
-#### Product Composite Service
+################################################
 
-GET http://localhost:8004/products
-Cache-Control: no-cache
-####
+#Zuuuul
+
+################################################
 
 #### Zuuuul
 
@@ -114,7 +128,7 @@ POST  http://localhost:8081/products-core-service/products/
 content-type: application/json
 
 {
-  "name": "update",
+  "name": "update1",
   "price": 100.0,
   "categoryId": 1,
   "details": "this detail"
@@ -125,6 +139,18 @@ GET http://localhost:8081/products-core-service/products/
 Cache-Control: no-cache
 ####
 
+
+################################################
+
+#composit core
+
+################################################
 GET http://localhost:8081/productscomposite-service/products/
 Cache-Control: no-cache
 ####
+
+DELETE http://localhost:8081/productscomposite-service/categories/{id}
+Cache-Control: no-cache
+
+
+GET https://example.com/comments?page=2&pageSize=10

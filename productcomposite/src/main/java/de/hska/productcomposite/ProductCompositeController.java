@@ -19,16 +19,13 @@ public class ProductCompositeController {
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ResponseEntity<?> search(@RequestParam(name="searchDescription", required=false) String description, @RequestParam(name="minPrice", required=false) String minPrice,
 			@RequestParam(name="maxPrice", required=false) String maxPrice) {
-
-
 		Product[] prod = client.getProducts(description, minPrice, maxPrice);
 		return new ResponseEntity<Product[]>(prod, HttpStatus.OK);
 	}
 	
+	
 	@RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> search(@PathVariable Long id) {
-
-
 		client.deleteCategory(id);
 		return new ResponseEntity<Object>(null, HttpStatus.OK);
 	}
