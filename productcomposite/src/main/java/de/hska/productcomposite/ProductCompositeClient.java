@@ -151,4 +151,17 @@ public class ProductCompositeClient {
 		restTemplate.delete(CATEGORIES_URI.concat("/"+id));
 	}
 	
+	public Product createProduct(Product prod) {
+		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
+		System.out.println(newProduct.getId());
+		long categoryId = newProduct.getCategoryId();
+		ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+categoryId), Category.class);
+		Category category = c.getBody();
+		
+		category.setProductIds(category.getProductIds().concat((category.getProductIds().isEmpty()? "":","))+newProduct.getId().toString());
+		
+		//update Category
+		restTemplate.put(CATEGORIES_URI.concat("/"+categoryId), category);
+		return newProduct;
+	}
 }

@@ -51,6 +51,17 @@ public class CategoryCoreController {
 		return new ResponseEntity<Object>(null, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/categories/{categoryId}", method = RequestMethod.PUT)
+	public ResponseEntity<Category> updateCategory(@PathVariable Long categoryId, @RequestBody Category category) {
+		
+		Category plocal = repo.findById(categoryId).orElse(null);
+		if(plocal != null && category != null && plocal.getId() == category.getId()) {
+			System.out.println("Has been update");
+			repo.save(category);
+		}
+		return new ResponseEntity<Category>(category, HttpStatus.OK);
+	}
+	
 
 	
 }

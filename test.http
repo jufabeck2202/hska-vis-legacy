@@ -23,9 +23,20 @@ POST http://localhost:8003/categories
 content-type: application/json
 
 {
-    "name": "name",
-    "productIds": "test"
+    "name": "Kaffee",
+    "productIds": ""
 }
+
+###
+PUT  http://localhost:8003/categories/1
+content-type: application/json
+
+{
+  "id": 1,
+ "name": "name",
+  "productIds": "1"
+}
+
 
 ###
 
@@ -139,6 +150,16 @@ GET http://localhost:8081/products-core-service/products/
 Cache-Control: no-cache
 ####
 
+POST  http://localhost:8081/productscomposite-service/products/
+content-type: application/json
+
+{
+  "name": "update1",
+  "price": 100.0,
+  "categoryId": 1,
+  "details": "this detail"
+}
+
 
 ################################################
 
@@ -149,7 +170,7 @@ GET http://localhost:8081/productscomposite-service/products/
 Cache-Control: no-cache
 ####
 
-DELETE http://localhost:8081/productscomposite-service/categories/{id}
+DELETE http://localhost:8081/productscomposite-service/categories/1
 Cache-Control: no-cache
 
 
