@@ -174,4 +174,4 @@ DELETE http://localhost:8081/productscomposite-service/categories/1
 Cache-Control: no-cache
 
 
-GET https://example.com/comments?page=2&pageSize=10
+GET https://example.com/comments?page=2&pageSize=10 
