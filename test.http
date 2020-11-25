@@ -133,7 +133,7 @@ Cache-Control: no-cache
 
 ################################################
 
-#### Zuuuul
+#### Zuuuul Composite
 
 POST  http://localhost:8081/products-core-service/products/
 content-type: application/json
@@ -150,22 +150,6 @@ GET http://localhost:8081/products-core-service/products/
 Cache-Control: no-cache
 ####
 
-POST  http://localhost:8081/productscomposite-service/products/
-content-type: application/json
-
-{
-  "name": "update1",
-  "price": 100.0,
-  "categoryId": 1,
-  "details": "this detail"
-}
-
-
-################################################
-
-#composit core
-
-################################################
 GET http://localhost:8081/productscomposite-service/products/
 Cache-Control: no-cache
 ####
@@ -173,5 +157,89 @@ Cache-Control: no-cache
 DELETE http://localhost:8081/productscomposite-service/categories/1
 Cache-Control: no-cache
 
+####
+POST  http://localhost:8081/productscomposite-service/products/
+content-type: application/json
 
-GET https://example.com/comments?page=2&pageSize=10 
+{
+  "name": "Koffee",
+  "price": 100.0,
+  "categoryId": 2,
+  "details": "Really expensive Coffee"
+}
+####
+POST  http://localhost:8081/productscomposite-service/products/
+content-type: application/json
+
+{
+  "name": "Cheaper Coffee",
+  "price": 10.0,
+  "categoryId": 1,
+  "details": "Really cheap Coffee"
+}
+
+####
+GET http://localhost:8081/productscomposite-service/products/
+Cache-Control: no-cache
+
+### maxPrice minPrice searchDescription
+##test maxprice
+GET http://localhost:8081/productscomposite-service/products?maxPrice=50
+Cache-Control: no-cache
+
+###
+##test minprice
+GET http://localhost:8081/productscomposite-service/products?minPrice=50
+Cache-Control: no-cache
+
+###
+##search Description
+GET http://localhost:8081/productscomposite-service/products?searchDescription=expensive
+Cache-Control: no-cache
+
+GET https://example.com/comments?page=2&pageSize=10
+
+###
+POST http://localhost:8081/category-core-service/categories 
+content-type: application/json
+
+{
+    "name": "Kaffee",
+    "productIds": ""
+}
+
+###
+GET  http://localhost:8081/category-core-service/categories 
+content-type: application/json
+
+###
+
+###
+GET http://localhost:8081/products-core-service/products/
+Cache-Control: no-cache
+####
+
+
+#####################################
+
+##### Test User Via ZUUL
+
+###################################
+GET http://localhost:8081/user-core-service/users/name/beju
+Cache-Control: no-cache
+####
+
+GET http://localhost:8081/user-core-service/users/1
+Cache-Control: no-cache
+####
+POST   http://localhost:8081/user-core-service/users/
+content-type: application/json
+
+{
+   "username": "beju",
+  "firstname": "be",
+   "lastname": "ju",
+  "password": "kickerking",
+  "roletype": "admin",
+  "rolelevel": 1
+}

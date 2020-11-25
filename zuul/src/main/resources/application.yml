@@ -15,7 +15,7 @@ eureka:
       path: /productscomposite-services/**
     products-core-service:
       path: /products-core-service/**
-    users-core-service:
-      path: /**
     category-core-service:
       path: /category-core-service/**
+    user-core-service:
+      path: /user-core-service/**

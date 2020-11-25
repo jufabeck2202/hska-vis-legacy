@@ -152,12 +152,14 @@ public class ProductCompositeClient {
 	}
 	
 	public Product createProduct(Product prod) {
-		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
-		System.out.println(newProduct.getId());
-		long categoryId = newProduct.getCategoryId();
+		long categoryId = prod.getCategoryId();
 		ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+categoryId), Category.class);
+		System.out.println("beju1"+c);
 		Category category = c.getBody();
-		
+		System.out.println("beju2"+category);
+		if (category == null) {return null;}
+
+		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
 		category.setProductIds(category.getProductIds().concat((category.getProductIds().isEmpty()? "":","))+newProduct.getId().toString());
 		
 		//update Category

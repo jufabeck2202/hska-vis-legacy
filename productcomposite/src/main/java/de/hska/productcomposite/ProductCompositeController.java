@@ -32,8 +32,11 @@ public class ProductCompositeController {
 	}
 	
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
-	public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+	public ResponseEntity<?> addProduct(@RequestBody Product product) {
 		Product prod = client.createProduct(product);
+		if (prod == null){
+			return new ResponseEntity<Object>(null, HttpStatus.BAD_REQUEST);
+		}
 		return new ResponseEntity<Product>(prod, HttpStatus.CREATED);
 	}
 	

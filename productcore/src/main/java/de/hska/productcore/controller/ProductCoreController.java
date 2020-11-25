@@ -47,14 +47,14 @@ public class ProductCoreController {
 	}
 	
 	@RequestMapping(value = "/products/{productId}", method = RequestMethod.PUT)
-	public ResponseEntity<Product> updateProduct(@PathVariable Long productId, @RequestBody Product product) {
+	public ResponseEntity<Product> updateProduct(@PathVariable Long productId, @RequestBody Product newProduct) {
 		// problem with id: If we dont supply id it generates an error
-		Product plocal = repo.findById(productId).orElse(null);
-		if(plocal != null && product != null && plocal.getId() == product.getId()) {
+		Product oldProduct = repo.findById(productId).orElse(null);
+		if(oldProduct != null && newProduct != null && oldProduct.getId() == newProduct.getId()) {
 			System.out.println("Has been update");
-			repo.save(product);
+			repo.save(newProduct);
 		}
-		return new ResponseEntity<Product>(product, HttpStatus.OK);
+		return new ResponseEntity<Product>(newProduct, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/products/{productId}", method = RequestMethod.DELETE)
