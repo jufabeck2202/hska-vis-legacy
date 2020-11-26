@@ -209,6 +209,16 @@ content-type: application/json
 }
 
 ###
+PUT http://localhost:8081/category-core-service/categories/2
+content-type: application/json
+
+{
+    "id": 2,
+    "name": "Tee",
+    "productIds": ""
+}
+
+###
 GET  http://localhost:8081/category-core-service/categories 
 content-type: application/json
 

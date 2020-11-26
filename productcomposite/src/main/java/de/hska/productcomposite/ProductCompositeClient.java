@@ -68,7 +68,7 @@ public class ProductCompositeClient {
 			ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+p.getCategoryId()), Category.class);
 			p.setCategory(c.getBody());
 			productCache.putIfAbsent(p.getId(), p);
-			//save query results  filderd by description and price
+			
 			productDescCache.putIfAbsent(p.getId(), p.getDetails());
 			productPriceCache.putIfAbsent(p.getId(), p.getPrice());
 		}
@@ -154,9 +154,7 @@ public class ProductCompositeClient {
 	public Product createProduct(Product prod) {
 		long categoryId = prod.getCategoryId();
 		ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+categoryId), Category.class);
-		System.out.println("beju1"+c);
 		Category category = c.getBody();
-		System.out.println("beju2"+category);
 		if (category == null) {return null;}
 
 		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
