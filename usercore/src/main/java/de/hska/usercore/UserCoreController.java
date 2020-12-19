@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,12 +25,13 @@ import de.hska.usercore.model.UserRepo;
 public class UserCoreController {
 	@Autowired
 	private UserRepo repo;
-	//@Autowired
-	//private PasswordEncoder encoder;
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user) {
+		user.setPassword(encoder.encode(user.getPassword()));
 		user = repo.save(user);
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
 	}
@@ -52,6 +54,7 @@ public class UserCoreController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/users/{userId}", method = RequestMethod.PUT)
 	public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody User user) {
 		User userlocal = repo.findById(userId).orElse(null);
@@ -60,7 +63,7 @@ public class UserCoreController {
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/users/{userId}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> deleteUser(@PathVariable Long userId) {
 		repo.deleteById(userId);
