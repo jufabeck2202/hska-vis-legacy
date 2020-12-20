@@ -15,46 +15,72 @@
  */
 package de.hska.usercore;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
  * @author Joe Grandja
  */
+@Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+@Order(-20)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	// @formatter:off
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/oauth2/keys").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin();
-	}
-	// @formatter:on
+	
+	@Autowired
+	private UserSecurityAdapter userDetailsService;
+	/*
+	 * Override this method to expose the AuthenticationManager from 
+	 * configure(AuthenticationManagerBuilder) to be exposed as a Bean. 
+	 * 
+	 */
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
-	@Bean
-	public UserDetailsService users() throws Exception {
-		@SuppressWarnings("deprecation")
-		User.UserBuilder users = User.withDefaultPasswordEncoder();
-		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-		manager.createUser(users.username("oauthuser").password("oauthpassword").roles("USER").build());
-		manager.createUser(users.username("admin").password("password").roles("USER", "ADMIN").build());
-		return manager;
-	}
 
-	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+    }
+
+    // you shouldn't use plain text
+    @Bean
+    public PasswordEncoder encoder() {
+    	return new BCryptPasswordEncoder();
+    }
+    
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(HttpMethod.POST, "/users");
+    }
+    
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+    	http
+			.requestMatchers()
+			.antMatchers("/login", "/oauth/authorize", "/oauth/confirm_access")
+            .and()
+            .formLogin().loginPage("/login").permitAll().failureUrl("/login?error")
+            .and()
+            .authorizeRequests().anyRequest().authenticated();
+    }
 }

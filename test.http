@@ -102,10 +102,10 @@ POST   http://localhost:8001/users/
 content-type: application/json
 
 {
-   "username": "beju",
+   "username": "pape123",
   "firstname": "be",
    "lastname": "ju",
-  "password": "kickerking",
+  "password": "pape123",
   "roletype": "admin",
   "rolelevel": 1
 }

@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.jwt.JwtHelper;
 import org.springframework.security.jwt.crypto.sign.RsaSigner;
 import org.springframework.security.jwt.crypto.sign.RsaVerifier;
@@ -54,7 +55,9 @@ import java.util.Map;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-
+	
+	@Autowired
+	private PasswordEncoder encoder;
 	@Autowired
 	private ClientDetailsService clientDetailsService;
 
@@ -65,10 +68,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		// @formatter:off
 		clients.inMemory()
-			.withClient("webshop")
+			.withClient("webshop").secret(encoder.encode("secret"))
 				.authorizedGrantTypes("authorization_code", "refresh_token", "client_credentials", "password")
-				.scopes("read", "write")
-				.secret("secret");
+				.scopes("read", "write");
 				//.redirectUris("http://localhost:8080/client/authorized");
 		// @formatter:on
 	}
