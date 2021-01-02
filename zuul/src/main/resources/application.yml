@@ -18,4 +18,5 @@ eureka:
     category-core-service:
       path: /category-core-service/**
     user-core-service:
-      path: /user-core-service/**
+      path: /** 
+#/user-core-service/**
