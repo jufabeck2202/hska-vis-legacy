@@ -103,9 +103,9 @@ services:
       - "8080:8080"
       - "8000:8000"
     networks:
-        services-network-01:
-          aliases:
-            - zuul
+      services-network-01:
+        aliases:
+          - zuul
 
 networks:
   services-network-01:

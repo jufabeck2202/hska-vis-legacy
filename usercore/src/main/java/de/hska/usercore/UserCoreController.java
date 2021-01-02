@@ -31,6 +31,9 @@ public class UserCoreController {
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user) {
+		System.out.println("NewUser");
+		System.out.println(user.getFirstname());
+
 		user.setPassword(encoder.encode(user.getPassword()));
 		user = repo.save(user);
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
