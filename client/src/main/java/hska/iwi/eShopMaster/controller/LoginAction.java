@@ -28,7 +28,7 @@ public class LoginAction extends ActionSupport {
 	private String state;
 	private String fakeUsername;
 	
-	private static final String USERS_URL = "http://zuul:8081/users";
+	private static final String USERS_URL = "http://user-core:8001/users/";
 
 	@Override
 	public String execute() throws Exception {
@@ -37,9 +37,13 @@ public class LoginAction extends ActionSupport {
 		String result = "input";
 		try {	
 			OAuth2RestTemplate oAuth2RestTemplate = OAuth2Config.resetTemplate(getUsername(), getPassword());
-
+			System.out.println("Logged In");
+			System.out.println(oAuth2RestTemplate.getAccessToken());
+		
 			Map<String, Object> session = ActionContext.getContext().getSession();
-			User user = oAuth2RestTemplate.getForEntity(USERS_URL.concat("?username="+getUsername()), User.class).getBody();
+			User user = oAuth2RestTemplate.getForEntity(USERS_URL.concat("/name/"+getUsername()), User.class).getBody();
+			System.out.println("Logged template");
+
 			
 			// Does user exist?
 			if (user != null) {

@@ -26,11 +26,11 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @Configuration
 public class OAuth2Config {
 	
-	@Value("${oauth.resource:http://localhost:8001}")
+	@Value("${oauth.resource:http://user-core:8001}")
     private String baseUrl;
-    @Value("${oauth.authorize:http://localhost:8001/oauth/authorize}")
+    @Value("${oauth.authorize:http://user-core:8001/oauth/authorize}")
     private String authorizeUrl;
-    @Value("${oauth.token:http://localhost:8001/oauth/token}")
+    @Value("${oauth.token:http://user-core:8001/oauth/token}")
     private String tokenUrl;
     
     private static OAuth2RestTemplate template = null;
@@ -38,7 +38,7 @@ public class OAuth2Config {
     protected static OAuth2ProtectedResourceDetails resource(String username, String password) {
         ResourceOwnerPasswordResourceDetails resource;
         resource = new  ResourceOwnerPasswordResourceDetails();
-        resource.setAccessTokenUri("http://zuul:8081/oauth/token");
+        resource.setAccessTokenUri("http://user-core:8001/oauth/token");
         resource.setClientId("webshop");
         resource.setClientSecret("secret");
         resource.setScope(Arrays.asList("write", "read"));

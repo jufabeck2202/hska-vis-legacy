@@ -2,7 +2,7 @@
 POST http://webshop:secret@localhost:8001/oauth/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&username=pape123&password=pape123&scope=write
+grant_type=password&username=beju&password=beju&scope=write
 
 ###
 

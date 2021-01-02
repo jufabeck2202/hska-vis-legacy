@@ -56,10 +56,10 @@ public class RegisterAction extends ActionSupport {
 		try {
 
 			restTemplate.postForEntity(USERS_URL, user, User.class).getBody();
-			addActionMessage("user registered, please login");
+			addActionMessage(username+" registered, please login");
 			addActionError("user registered, please login");
 			Map<String, Object> session = ActionContext.getContext().getSession();
-			session.put("message", "user registered, please login");
+			session.put("message", firstname+" registered, please login");
 			result = "success";
 		} catch (Exception e) {
 			e.printStackTrace();
