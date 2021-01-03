@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Informatik</a>
+					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Kickershop</a>
 				</div>
 				<div>
 					<ul class="nav navbar-nav">
@@ -37,7 +37,8 @@
 		
 		<div class="container">
 			<div class="row">
-				<s:text name="login.status" /> 	${webshop_user.firstname} ${webshop_user.lastname} ${webshop_user.roletype} ${webshop_user.rolelevel} 
+				<s:text name="login.status" /> 
+					${webshop_user.firstname} ${webshop_user.lastname} ${webshop_user.roletype} ${webshop_user.rolelevel} 
 			</div>
 			<div class="row">
 				<div class="col-xs-8">

@@ -25,7 +25,15 @@ public class RegisterAction extends ActionSupport {
 	private String password2;
 	private String firstname;
 	private String lastname;
-	private String role;
+	private String myrole;
+
+	public String getMyrole() {
+		return myrole;
+	}
+
+	public void setMyrole(String myrole) {
+		this.myrole = myrole;
+	}
 
 	private static RestTemplate restTemplate = generateRestTemplate();
 
@@ -48,13 +56,15 @@ public class RegisterAction extends ActionSupport {
 
 		// this.role = userManager.getRoleByLevel(1); // 1 -> regular User, 2-> Admin
 
-		User user = new User(username, firstname, lastname, password1, "admin", Integer.parseInt(role));
-		System.out.println(username);
-		System.out.println(firstname);
-		System.out.println(lastname);
-		System.out.println(password1);
-		System.out.println(user.toString());
+
 		try {
+			System.out.println(myrole);
+			User user = new User(username, firstname, lastname, password1, "admin", Integer.parseInt(myrole));
+			System.out.println(username);
+			System.out.println(firstname);
+			System.out.println(lastname);
+			System.out.println(password1);
+			System.out.println(user.toString());
 
 			restTemplate.postForEntity(USERS_URL, user, User.class).getBody();
 			addActionMessage(username+" registered, please login");

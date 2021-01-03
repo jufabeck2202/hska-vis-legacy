@@ -17,7 +17,7 @@
 	
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Informatik</a>
+					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Kickershop</a>
 				</div>
 				<div >
 					<ul class="nav navbar-nav">
@@ -56,6 +56,11 @@
 						<div class = "form-group">
 							<label>Passwort(wiederh.)*:</label>
 							<s:password name="password2" cssClass ="form-control" required="true" />
+						</div>
+						
+						<div class = "form-group">
+							<label>Role 0 Admin, User 1:</label>
+							<s:textfield name="myrole" cssClass ="form-control" required="true" />
 						</div>
 						<s:submit method="execute" key="register.submit" align="center" cssClass="btn btn-success" />
 					</s:form>
