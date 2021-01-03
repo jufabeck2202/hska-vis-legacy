@@ -25,6 +25,7 @@ public class RegisterAction extends ActionSupport {
 	private String password2;
 	private String firstname;
 	private String lastname;
+	private String role;
 
 	private static RestTemplate restTemplate = generateRestTemplate();
 
@@ -47,7 +48,7 @@ public class RegisterAction extends ActionSupport {
 
 		// this.role = userManager.getRoleByLevel(1); // 1 -> regular User, 2-> Admin
 
-		User user = new User(username, firstname, lastname, password1, "admin", 2);
+		User user = new User(username, firstname, lastname, password1, "admin", Integer.parseInt(role));
 		System.out.println(username);
 		System.out.println(firstname);
 		System.out.println(lastname);
