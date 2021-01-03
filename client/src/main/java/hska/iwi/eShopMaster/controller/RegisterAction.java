@@ -47,7 +47,7 @@ public class RegisterAction extends ActionSupport {
 
 		// this.role = userManager.getRoleByLevel(1); // 1 -> regular User, 2-> Admin
 
-		User user = new User(username, firstname, lastname, password1, "admin", 1);
+		User user = new User(username, firstname, lastname, password1, "admin", 2);
 		System.out.println(username);
 		System.out.println(firstname);
 		System.out.println(lastname);

@@ -3,16 +3,11 @@ package hska.iwi.eShopMaster.model.database.dataobjects;
 
 import javax.persistence.*;
 
-/**
- * This class contains details about products.
- */
+
 @Entity
 @Table(name = "product")
 public class Product implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

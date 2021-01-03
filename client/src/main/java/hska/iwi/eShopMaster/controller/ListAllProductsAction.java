@@ -26,7 +26,7 @@ public class ListAllProductsAction extends ActionSupport {
 	User user;
 	private List<Product> products;
 	
-	private final String PRODUCTS_URL = "http://zuul:8081/products-comp-service/products";
+	private final String PRODUCTS_URL = "http://zuul-server:8081/productscomposite-service/products";
 	
 	public String execute() throws Exception{
 		String result = "input";
@@ -34,15 +34,24 @@ public class ListAllProductsAction extends ActionSupport {
 		
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		user = (User) session.get("webshop_user");
-		
+		System.out.println(user.getUsername()+"tries to get in");
 		if(user != null){
 			System.out.println("list all products!");
-			Product[] arr = oAuth2RestTemplate.getForEntity(PRODUCTS_URL,Product[].class).getBody();
-			if(arr != null) {
-				this.products = Arrays.asList(arr);
-			} else {
-				this.products = Collections.emptyList();
+			try {
+				
+				Product[] arr = oAuth2RestTemplate.getForEntity(PRODUCTS_URL,Product[].class).getBody();
+				if(arr != null) {
+					this.products = Arrays.asList(arr);
+					System.out.println("Products");
+				} else {
+					this.products = Collections.emptyList();
+					System.out.println("empty");
+
+				}
+			} catch (Exception e) {
+				System.out.println(e);
 			}
+
 			result = "success";
 		}
 		

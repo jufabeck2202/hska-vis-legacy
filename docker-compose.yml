@@ -82,7 +82,7 @@ services:
       services-network-01:
         aliases:
           - turbine
-  zuul:
+  zuul-server:
     build: zuul/
     ports: 
       - 8081:8081
