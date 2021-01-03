@@ -27,9 +27,9 @@ import org.springframework.http.HttpHeaders;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
-
-import de.hska.productcomposite.model.Product;
 import de.hska.productcomposite.model.Category;
+import de.hska.productcomposite.model.Product;
+
 
 @Component
 public class ProductCompositeClient {
