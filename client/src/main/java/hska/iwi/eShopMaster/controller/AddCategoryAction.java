@@ -28,7 +28,7 @@ public class AddCategoryAction extends ActionSupport {
 	
 	User user;
 	
-	private static final String GET_CATEGORIES_URL = "http://zuul:8081/categories-service/categories";
+	private static final String CATEGORIES_URL = "http://zuul-server:8081/category-core-service/categories";
 
 	public String execute() throws Exception {
 
@@ -40,10 +40,10 @@ public class AddCategoryAction extends ActionSupport {
 		if(user != null && (user.getRoletype().equalsIgnoreCase("admin"))) {
 			// Add category
 			Category cat = new Category(newCatName);
-			oAuth2RestTemplate.postForEntity(GET_CATEGORIES_URL, cat, Category.class);
+			oAuth2RestTemplate.postForEntity(CATEGORIES_URL, cat, Category.class);
 			
-			// Go and get new Category list
-			Category[] arr = oAuth2RestTemplate.getForEntity(GET_CATEGORIES_URL,Category[].class).getBody();
+			// Get Updated List of Categories
+			Category[] arr = oAuth2RestTemplate.getForEntity(CATEGORIES_URL,Category[].class).getBody();
 			if(arr != null) {
 				this.setCategories(Arrays.asList(arr));
 			} else {
@@ -64,7 +64,7 @@ public class AddCategoryAction extends ActionSupport {
 		}
 		// Go and get new Category list
 		OAuth2RestTemplate oAuth2RestTemplate = OAuth2Config.getTemplate();
-		Category[] arr = oAuth2RestTemplate.getForEntity(GET_CATEGORIES_URL,Category[].class).getBody();
+		Category[] arr = oAuth2RestTemplate.getForEntity(CATEGORIES_URL,Category[].class).getBody();
 		if(arr != null) {
 			this.setCategories(Arrays.asList(arr));
 		} else {
