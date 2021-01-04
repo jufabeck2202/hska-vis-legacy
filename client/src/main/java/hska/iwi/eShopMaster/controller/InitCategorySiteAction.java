@@ -27,7 +27,7 @@ public class InitCategorySiteAction extends ActionSupport {
 
 	private List<Category> categories;
 	
-	private static final String GET_CATEGORIES_URL = "http://zuul:8081/categories-service/categories";
+	private static final String GET_CATEGORIES_URL = "http://zuul-server:8081/category-core-service/categories";
 
 	public String execute() throws Exception {
 		

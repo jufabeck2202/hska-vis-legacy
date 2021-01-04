@@ -25,35 +25,32 @@ public class AddProductAction extends ActionSupport {
 	private String details = null;
 	private List<Category> categories;
 	
-	private final String ADD_PRODUCT_URL = "http://zuul:8081/products-service/products";
-	private final String GET_CATEGORIES_URL = "http://zuul:8081/categories-service/categories";
+	private final String ADD_PRODUCT_URL = "http://zuul-server:8081/productscomposite-service/products";
+	private final String GET_CATEGORIES_URL = "http://zuul-server:8081/category-core-service/categories";
 
 	public String execute() throws Exception {
+		System.out.println("AddProduct");
 		String result = "input";
 		OAuth2RestTemplate oAuth2RestTemplate = OAuth2Config.getTemplate();
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		User user = (User) session.get("webshop_user");
-
+		//check if user exists and roletype is admin
 		if(user != null && (user.getRoletype().equalsIgnoreCase("admin"))) {
 			try {
 				Product product = new Product(name, Double.parseDouble(price), Long.valueOf(categoryId),
 						details);
-						
+				System.out.println("1");
 				Product response = oAuth2RestTemplate.postForObject(ADD_PRODUCT_URL, product, Product.class);
-				
+				System.out.println("2");
+				System.out.print(response.getName());
 				int productId = Math.toIntExact(response.getId());
 
-				Category cat = categories.stream().filter(c->c.getId() == Long.valueOf(categoryId)).findAny().get();
-				if(cat.getProductIds() != null) {
-					cat.setProductIds(cat.getProductIds().concat(","+productId));
-				} else {
-					cat.setProductIds(""+productId);
-				}
-				oAuth2RestTemplate.put(GET_CATEGORIES_URL.concat("/"+categoryId), cat);
+
 				if (productId > 0) {
 					result = "success";
 				}
 			} catch (Exception e) {
+				System.out.println(e);
 				e.printStackTrace();
 				throw e;
 			}
@@ -72,13 +69,9 @@ public class AddProductAction extends ActionSupport {
 		} else {
 			this.setCategories(Collections.emptyList());
 		}
-		// Validate name:
-
 		if (getName() == null || getName().length() == 0) {
 			addActionError(getText("error.product.name.required"));
 		}
-
-		// Validate price:
 
 		if (String.valueOf(getPrice()).length() > 0) {
 			if (!getPrice().matches("[0-9]+(.[0-9][0-9]?)?")

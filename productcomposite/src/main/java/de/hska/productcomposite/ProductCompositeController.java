@@ -33,6 +33,7 @@ public class ProductCompositeController {
 	
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<?> addProduct(@RequestBody Product product) {
+		System.out.print("Adding new Product");
 		Product prod = client.createProduct(product);
 		if (prod == null){
 			return new ResponseEntity<Object>(null, HttpStatus.BAD_REQUEST);
