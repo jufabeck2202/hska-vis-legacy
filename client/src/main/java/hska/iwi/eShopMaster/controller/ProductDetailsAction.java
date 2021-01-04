@@ -28,8 +28,8 @@ public class ProductDetailsAction extends ActionSupport {
 	private static final long serialVersionUID = 7708747680872125699L;
 	
 	
-	private final String GET_PRODUCT_URL = "http://zuul:8081/products-service/products";
-	private final String GET_CATEGORY_URL = "http://zuul:8081/categories-service/categories";
+	private final String GET_PRODUCT_URL = "http://zuul-server:8081/products-core-service/products";
+	private final String GET_CATEGORY_URL = "http://zuul-server:8081/category-core-service/categories";
 
 	public String execute() throws Exception {
 
@@ -41,7 +41,9 @@ public class ProductDetailsAction extends ActionSupport {
 		
 		if(user != null) {
 			try {
+				//get url for product
 				System.out.println(GET_PRODUCT_URL.concat("/"+id));
+				//get product
 				product = oAuth2RestTemplate.getForEntity(GET_PRODUCT_URL.concat("/"+id), Product.class).getBody();
 				if(product!=null) {
 					System.out.println(GET_CATEGORY_URL.concat("/"+product.getCategoryId()));
