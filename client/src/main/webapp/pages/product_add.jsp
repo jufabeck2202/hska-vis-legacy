@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Informatik</a>
+					<a class="navbar-brand" href="http://localhost:8080/EShop/">Informatik</a>
 				</div>
 				<div>
 					<ul class="nav navbar-nav">

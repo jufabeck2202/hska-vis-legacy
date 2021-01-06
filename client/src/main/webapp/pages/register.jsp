@@ -17,7 +17,7 @@
 	
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">Kickershop</a>
+					<a class="navbar-brand" href="http://localhost:8080/EShop/">Kickershop</a>
 				</div>
 				<div >
 					<ul class="nav navbar-nav">

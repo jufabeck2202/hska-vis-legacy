@@ -19,7 +19,7 @@
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.iwi.hs-karlsruhe.de">HSKA</a>
+					<a class="navbar-brand" href="http://localhost:8080/EShop/">HSKA</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbarCollapse">
