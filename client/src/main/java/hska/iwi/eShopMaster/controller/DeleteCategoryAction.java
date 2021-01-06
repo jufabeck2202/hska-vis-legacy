@@ -26,23 +26,24 @@ public class DeleteCategoryAction extends ActionSupport {
 	private List<Category> categories;
 	
 	
-	private final String CATEGORIES_URL = "http://zuul:8081/products-comp-service/categories";
-	private final String GET_CATEGORIES_URL = "http://zuul:8081/categories-service/categories";
+	private final String CATEGORIES_URL = "http://zuul-server:8081/productscomposite-service/categories";
+	private final String LIST_CATEGORIES = "http://zuul-server:8081/category-core-service/categories";
 
 	public String execute() throws Exception {
 		OAuth2RestTemplate oAuth2RestTemplate = OAuth2Config.getTemplate();
 		String res = "input";
-		
+		//get User
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		User user = (User) session.get("webshop_user");
-		
+		//check if admin
 		if(user != null && (user.getRoletype().equalsIgnoreCase("admin"))) {
 
 			// Helper inserts new Category in DB:
 			try {
+				//delete products
 				oAuth2RestTemplate.delete(CATEGORIES_URL.concat("/"+catId));
-
-				Category[] arr2 = oAuth2RestTemplate.getForEntity(GET_CATEGORIES_URL,Category[].class).getBody();
+				// update product list
+				Category[] arr2 = oAuth2RestTemplate.getForEntity(LIST_CATEGORIES,Category[].class).getBody();
 				if(arr2 != null) {
 					this.categories = Arrays.asList(arr2);
 				} else {
