@@ -35,8 +35,7 @@ public class SearchAction extends ActionSupport{
 	private List<Product> products;
 	private List<Category> categories;
 
-	private final String PRODUCTS_URL = "http://zuul:8081/products-comp-service/products";
-	private final String GET_CATEGORIES_URL = "http://zuul:8081/categories-service/categories";
+	private final String PRODUCTS_URL = "http://zuul-server:8081/productscomposite-service/products";
 
 	public String execute() throws Exception {
 		
@@ -49,16 +48,17 @@ public class SearchAction extends ActionSupport{
 		ActionContext.getContext().setLocale(Locale.US);  
 		
 		if(user != null){
-			// Search products and show results:
-//			this.products = productManager.getProductsForSearchValues(this.searchDescription, this.searchMinPrice, this.searchMaxPrice);
+	
 			if (!searchMinPrice.isEmpty()){
 				sMinPrice =  Double.parseDouble(this.searchMinPrice);
 			}
 			if (!searchMaxPrice.isEmpty()){
 				sMaxPrice =  Double.parseDouble(this.searchMaxPrice);
 			}
+			
 			StringBuilder searchQuery = new StringBuilder();
 			searchQuery.append(PRODUCTS_URL);
+			
 			if((searchDescription != null && !searchDescription.isEmpty()) || sMinPrice != null || sMaxPrice != null) {
 				boolean notFirst = false;
 				searchQuery.append("?");
@@ -81,22 +81,14 @@ public class SearchAction extends ActionSupport{
 				}
 			}
 			try {
-				System.out.println(searchQuery.toString());
 				Product[] arr = oAuth2RestTemplate.getForEntity(searchQuery.toString(),Product[].class).getBody();
+				
 				if(arr != null) {
 					this.products = Arrays.asList(arr);
 				} else {
 					this.products = Collections.emptyList();
 				}
 			
-				System.out.println(GET_CATEGORIES_URL);
-				// Show all categories:
-				Category[] arr2 = oAuth2RestTemplate.getForEntity(GET_CATEGORIES_URL,Category[].class).getBody();
-				if(arr2 != null) {
-					this.categories = Arrays.asList(arr2);
-				} else {
-					this.categories = Collections.emptyList();
-				}
 				
 			} catch(Exception e) {
 				e.printStackTrace();

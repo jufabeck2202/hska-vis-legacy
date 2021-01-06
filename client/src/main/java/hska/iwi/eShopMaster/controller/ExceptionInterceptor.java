@@ -39,7 +39,6 @@ public class ExceptionInterceptor extends ExceptionMappingInterceptor {
             ExceptionMappingConfig mappingConfig = this.findMappingFromExceptions(exceptionMappings, e);
             if (mappingConfig != null && mappingConfig.getResult()!=null) {
                 Map parameterMap = mappingConfig.getParams();
-                // create a mutable HashMap since some interceptors will remove parameters, and parameterMap is immutable
                 invocation.getInvocationContext().setParameters(new HashMap<String, Object>(parameterMap));
                 result = mappingConfig.getResult();
                 publishException(invocation, new ExceptionHolder(e));
