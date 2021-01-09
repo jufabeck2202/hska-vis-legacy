@@ -1,10 +1,30 @@
 # curl webshop:secret@localhost:8001/oauth/token -d grant_type=password -d username=pape123 -d password=pape123 -d scope=write
+### Create user
+POST   http://localhost:8001/users/
+content-type: application/json
+
+{
+   "username": "beju",
+  "firstname": "be",
+   "lastname": "ju",
+  "password": "beju",
+  "roletype": "admin",
+  "rolelevel": 0
+}
+### Log User in
 POST http://webshop:secret@localhost:8001/oauth/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password&username=beju&password=beju&scope=write
 
-###
+### wir gehen über zuul.
+GET http://localhost:8081/productscomposite-service/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlSMXR2Nk5TNHk2cFFsRUNNMzYwbm5rcWgzODNUQS8zcWx6TERCRjl5ZTg9In0.eyJleHAiOjE2MTAyNDA0MTksInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4NmU5NGJhMi00YjllLTQwNGUtYWM5Ny0xZmYxZDgwYmM2YjAiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.GYDDive5d6H6HcZoJizRCyi_NtSCHOAH1FCxceVPYjs6cwgipq-G59bNko5_xkcV-Xy3x2aKRdv6LtkKeHv2r3qifxoRkOiyznwTNNmZ2cenK6K3Suxu8P_WFdiAEVmyGdw-LcHNn-FnC5vD48E5lK5dHhzmrwXPH5qrTU5Es3pVm3LQVzyXcddOEeroFXAbg48sRvSiP6cJnphMpDJWmFMRoIl4ewRq3HD2YodwDPrtmQusPbz3G187sjrOaItbCuLpAresJpYTQP-TVR82Gjui8gUHsRosN6GJCAUXNJyo_bKoV4DbHJ7PA7oYUdfx2VyvZ6ycjqy2EYCW3aWNxw
+
+### Direkt
+GET http://localhost:8004/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InY5TUgyUEJheXNPSzIxb29UZ1NZTWZqaG5WYjczWUxTZnRqdU5XNWlVaFU9In0.eyJleHAiOjE2MTAyMzkzNDgsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiJkNDIwZDhmNi1hY2JhLTQ0ZDItOWIzMy1hNzY0M2Q1YWI2MmUiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.pg__9NlGSc-zKWj76g9yEeM1JqjYQGlUP0-8JPbtadn9iu50PAvnBDgIR92f-Cifpl0E8NRJ5JsQurlKniNaYHTtLz6IubZmCtfLiV4PWN6gteQW8X5x_cVo-pYGhA45h-jRk_u_yYTFwGcGUwu7kc9v_KqmC_dB-0pk_kDU25SCtD5cXmbar4aX8TN5ufLjXfvmX8NsvIR6W8SjGOs5ZniSifrjPRHgagjDiYtbfCTGGDvejn9CtsGuItHDnljZJutJvcpFFS5u236xbr11mtwIljscitx-8HzeAnMCMqRrmheznqm8ksCxQKDwuatBx5QB_5yNMgJl8AJ0xINwzw
+####
 
 POST http://webshop:secret@localhost:8001/oauth/token
 Content-Type: application/x-www-form-urlencoded
@@ -22,10 +42,10 @@ POST   http://localhost:8001/users/
 content-type: application/json
 
 {
-   "username": "pape12",
+   "username": "beju",
   "firstname": "be",
    "lastname": "ju",
-  "password": "pape123",
+  "password": "beju",
   "roletype": "admin",
   "rolelevel": 0
 }

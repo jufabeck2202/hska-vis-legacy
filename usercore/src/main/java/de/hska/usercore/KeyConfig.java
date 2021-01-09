@@ -23,6 +23,7 @@ class KeyConfig {
 	static final String VERIFIER_KEY_ID = new String(Base64.encode(KeyGenerators.secureRandom(32).generateKey()));
 
 	static RSAPublicKey getVerifierKey() {
+		System.out.println("Verify");
 		return (RSAPublicKey) getKeyPair().getPublic();
 	}
 

@@ -7,7 +7,16 @@ eureka:
     statusPageUrlPath: /info
     healthCheckUrlPath: /health
 
-    zuul:
+
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+      jwk:
+        key-set-uri: http://user-core:8001/oauth2/keys #oauth/check_token
+
+zuul:
   ignoredServices: '*'
   sensitiveHeaders: Cookie,Set-Cookie
   routes:
@@ -18,5 +27,4 @@ eureka:
     category-core-service:
       path: /category-core-service/**
     user-core-service:
-      path: /** 
-#/user-core-service/**
+      path: /**  #/user-core-service/**

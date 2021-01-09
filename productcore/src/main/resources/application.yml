@@ -13,3 +13,10 @@ eureka:
     leaseRenewalIntervalInSeconds: 5
     metadataMap:
       instanceId: "${spring.application.name}:${random.value}"
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+      jwk:
+        key-set-uri: http://user-core:8001/oauth2/keys #oauth/check_token
