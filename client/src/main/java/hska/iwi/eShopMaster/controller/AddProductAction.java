@@ -44,6 +44,8 @@ public class AddProductAction extends ActionSupport {
 				System.out.println("2");
 				System.out.print(response.getName());
 				int productId = Math.toIntExact(response.getId());
+				System.out.println("3");
+				System.out.println(productId);
 
 
 				if (productId > 0) {
