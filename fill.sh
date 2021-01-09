@@ -8,17 +8,30 @@ curl -X POST --location "http://localhost:8001/users/" \
           \"roletype\": \"admin\",
           \"rolelevel\": 0
         }"
-        
+
+
+
+json=$(curl -X POST --location "http://webshop:secret@localhost:8001/oauth/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password&username=admin&password=admin&scope=write")
+token=$( jq -r ".access_token" <<<"$json" )
+echo ""
+echo $token
+echo
+
 curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Cache-Control: no-cache"\
+    -H "Authorization: Bearer $token"
+curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Cache-Control: no-cache" \
+    -H "Authorization: Bearer $token" 
+curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "Cache-Control: no-cache"
 curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
-    -H "Cache-Control: no-cache"
-curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
-    -H "Cache-Control: no-cache"
-curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "Cache-Control: no-cache"
 
 curl -X POST --location "http://localhost:8003/categories" \
+    -H "Authorization: Bearer $token" \
     -H "content-type: application/json" \
     -d "{
         \"name\": \"Kicker-Ersatzteile\",
@@ -26,6 +39,7 @@ curl -X POST --location "http://localhost:8003/categories" \
         }"
 
 curl -X POST --location "http://localhost:8003/categories" \
+    -H "Authorization: Bearer $token" \
     -H "content-type: application/json" \
     -d "{
         \"name\": \"Bausätze\",
@@ -33,12 +47,15 @@ curl -X POST --location "http://localhost:8003/categories" \
         }"
 
 curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "Cache-Control: no-cache"
 
 curl -X GET --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "Cache-Control: no-cache"
 
 curl -X POST --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "content-type: application/json" \
     -d "{
         \"name\": \"Figur\",
@@ -48,6 +65,7 @@ curl -X POST --location "http://localhost:8081/productscomposite-service/product
         }"
 
 curl -X POST --location "http://localhost:8081/productscomposite-service/products/" \
+    -H "Authorization: Bearer $token" \
     -H "content-type: application/json" \
     -d "{
         \"name\": \"SuperkickerX\",

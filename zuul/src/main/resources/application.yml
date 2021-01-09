@@ -18,10 +18,10 @@ security:
 
 zuul:
   ignoredServices: '*'
-  sensitiveHeaders: Cookie,Set-Cookie
+  sensitiveHeaders:
   routes:
-    productscomposite-services:
-      path: /productscomposite-services/**
+    productscomposite-service:
+      path: /productscomposite-service/**
     products-core-service:
       path: /products-core-service/**
     category-core-service:

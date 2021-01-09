@@ -12,4 +12,7 @@ mvn package -DskipTests
 cd ..
 cd turbine/
 mvn package -DskipTests
+cd ..
+cd zuul/
+mvn package -DskipTests
 docker-compose up --force-recreate --build -d
