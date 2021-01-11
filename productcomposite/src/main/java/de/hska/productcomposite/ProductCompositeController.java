@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
@@ -22,7 +23,6 @@ import de.hska.productcomposite.model.Product;
 public class ProductCompositeController {
 	@Autowired
 	ProductCompositeClient client;
-	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ResponseEntity<?> search(@RequestParam(name="searchDescription", required=false) String description, @RequestParam(name="minPrice", required=false) String minPrice,
 			@RequestParam(name="maxPrice", required=false) String maxPrice, Authentication auth) {
@@ -43,7 +43,7 @@ public class ProductCompositeController {
 		return new ResponseEntity<Product[]>(prod, HttpStatus.OK);
 	}
 	
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> search(@PathVariable Long id, Authentication auth) {
 		Collection<?extends GrantedAuthority> granted = auth.getAuthorities();
@@ -56,7 +56,7 @@ public class ProductCompositeController {
 		client.deleteCategory(id);
 		return new ResponseEntity<Object>(null, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<?> addProduct(@RequestBody Product product, Authentication auth) {
 		Collection<?extends GrantedAuthority> granted = auth.getAuthorities();

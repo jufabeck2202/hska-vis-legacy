@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,7 @@ public class CategoryCoreController {
 		}
 		return new ResponseEntity<Iterable<Category>>(allPolls, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/categories", method = RequestMethod.POST)
 	public ResponseEntity<?> addCategory(@RequestBody Category category) {
 		category = repo.save(category);
@@ -43,14 +44,14 @@ public class CategoryCoreController {
 		Category category = repo.findById(categoryId).orElse(null);
 		return new ResponseEntity<Category>(category, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/categories/{categoryId}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteCategory(@PathVariable Long categoryId) {
 		//Category user = repo.findById(categoryId).orElse(null);
 		repo.deleteById(categoryId);
 		return new ResponseEntity<Object>(null, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/categories/{categoryId}", method = RequestMethod.PUT)
 	public ResponseEntity<Category> updateCategory(@PathVariable Long categoryId, @RequestBody Category category) {
 		

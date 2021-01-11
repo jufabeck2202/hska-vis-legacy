@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +34,7 @@ public class ProductCoreController {
 		}
 		return new ResponseEntity<Iterable<Product>>(all, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<Product> addProduct(@RequestBody Product product) {
 		product = repo.save(product);
@@ -45,7 +46,7 @@ public class ProductCoreController {
 		Product product = repo.findById(productId).orElse(null);
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/products/{productId}", method = RequestMethod.PUT)
 	public ResponseEntity<Product> updateProduct(@PathVariable Long productId, @RequestBody Product newProduct) {
 		// problem with id: If we dont supply id it generates an error
@@ -56,7 +57,7 @@ public class ProductCoreController {
 		}
 		return new ResponseEntity<Product>(newProduct, HttpStatus.OK);
 	}
-	
+	@PreAuthorize("hasAnyAuthority('ADMIN')")
 	@RequestMapping(value = "/products/{productId}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> deleteProduct(@PathVariable Long productId) {
 		repo.deleteById(productId);

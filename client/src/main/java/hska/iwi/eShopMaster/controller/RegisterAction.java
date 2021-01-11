@@ -58,8 +58,9 @@ public class RegisterAction extends ActionSupport {
 
 
 		try {
+			
 			System.out.println(myrole);
-			User user = new User(username, firstname, lastname, password1, "admin", Integer.parseInt(myrole));
+			User user = new User(username, firstname, lastname, password1, Integer.parseInt(myrole) == 0 ? "admin" : "user", Integer.parseInt(myrole));
 			System.out.println(username);
 			System.out.println(firstname);
 			System.out.println(lastname);
