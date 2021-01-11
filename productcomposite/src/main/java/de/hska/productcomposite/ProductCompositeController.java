@@ -66,9 +66,7 @@ public class ProductCompositeController {
 		{
 			client.setAccessToken(((OAuth2AuthenticationDetails) auth.getDetails()).getTokenValue());
 		}
-		System.out.print("Adding new Product");
 		Product prod = client.createProduct(product);
-		System.out.print("created");
 		System.out.print(prod.getId());
 		if (prod == null){
 			return new ResponseEntity<Object>(null, HttpStatus.BAD_REQUEST);

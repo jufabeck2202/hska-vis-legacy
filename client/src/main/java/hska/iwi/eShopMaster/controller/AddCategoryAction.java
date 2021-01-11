@@ -40,6 +40,7 @@ public class AddCategoryAction extends ActionSupport {
 		if(user != null && (user.getRoletype().equalsIgnoreCase("admin"))) {
 			// Add category
 			Category cat = new Category(newCatName);
+			cat.setProductIds("");
 			oAuth2RestTemplate.postForEntity(CATEGORIES_URL, cat, Category.class);
 			
 			// Get Updated List of Categories

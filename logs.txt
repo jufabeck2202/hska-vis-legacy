@@ -1,0 +1,415 @@
+Attaching to hska-vis-legacy_product-composite_1
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m   .   ____          _            __ _ _
+[36mproduct-composite_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[36mproduct-composite_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[36mproduct-composite_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[36mproduct-composite_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[36mproduct-composite_1  |[0m  =========|_|==============|___/=/_/_/_/
+[36mproduct-composite_1  |[0m  :: Spring Boot ::        (v2.3.5.RELEASE)
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:22.294  INFO 1 --- [           main] d.h.p.ProductcompositeApplication        : No active profile set, falling back to default profiles: default
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:32.938  WARN 1 --- [           main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:33.108  WARN 1 --- [           main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:34.876  INFO 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6b106b71-401f-382b-b0d0-81b9d6320a99
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:37.092  INFO 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@9cb8225' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:37.147  INFO 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:39.715  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8004 (http)
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:39.814  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:39.818  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:41.472  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:41.485  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 18905 ms
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:42.827  WARN 1 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:42.835  INFO 1 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:42.965  INFO 1 --- [           main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1984b1f
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:44.107  INFO 1 --- [           main] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:44.245 DEBUG 1 --- [           main] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:46.975  WARN 1 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:46.976  INFO 1 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:49.391  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:54.458  INFO 1 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m Using generated security password: 6ba75cd6-c7f0-4184-8de5-8fc492c64537
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:56.251  INFO 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41a90fa8, org.springframework.security.web.context.SecurityContextPersistenceFilter@77192705, org.springframework.security.web.header.HeaderWriterFilter@4fad94a7, org.springframework.security.web.authentication.logout.LogoutFilter@3d08f3f5, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@6175619b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e809b79, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@625e134e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d8bbcdc, org.springframework.security.web.session.SessionManagementFilter@6326d182, org.springframework.security.web.access.ExceptionTranslationFilter@52b56a3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6273c5a4]
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:57.252  WARN 1 --- [           main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:57.892  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:58.312  INFO 1 --- [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+[36mproduct-composite_1  |[0m 2021-01-11 07:31:59.057  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:00.905  INFO 1 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:00.913  INFO 1 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:02.460  INFO 1 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:02.460  INFO 1 --- [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.537  INFO 1 --- [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.690  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.691  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.692  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.692  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.692  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.692  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:04.693  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.233  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.267  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.275  INFO 1 --- [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.325  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1610350326312 with initial instances count: 1
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.364  INFO 1 --- [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PRODUCTSCOMPOSITE-SERVICE with eureka with status UP
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.374  INFO 1 --- [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1610350326374, current=UP, previous=STARTING]
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.391  INFO 1 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTSCOMPOSITE-SERVICE/5e63cda94ca2:productscomposite-service:8004: registering service...
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.692  INFO 1 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTSCOMPOSITE-SERVICE/5e63cda94ca2:productscomposite-service:8004 - registration status: 204
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.751  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8004 (http) with context path ''
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.759  INFO 1 --- [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8004
+[36mproduct-composite_1  |[0m 2021-01-11 07:32:06.911  INFO 1 --- [           main] d.h.p.ProductcompositeApplication        : Started ProductcompositeApplication in 57.035 seconds (JVM running for 62.569)
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:33.757 DEBUG 1 --- [nio-8004-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /actuator/hystrix.stream, headers=[host:"172.18.0.8:8004", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/1.8.0_111-internal)"]]
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:36.352  INFO 1 --- [nio-8004-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:36.352  INFO 1 --- [nio-8004-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:36.394  INFO 1 --- [nio-8004-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 42 ms
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:36.849 DEBUG 1 --- [nio-8004-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /products, headers=[authorization:"bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg", accept:"application/json, application/*+json", content-type:"application/json;charset=UTF-8", user-agent:"Java/1.8.0_275", x-forwarded-host:"zuul-server:8081", x-forwarded-proto:"http", x-forwarded-prefix:"/productscomposite-service", x-forwarded-port:"8081", x-forwarded-for:"172.18.0.2", accept-encoding:"gzip", content-length:"88", host:"172.18.0.8:8004", connection:"Keep-Alive"]]
+[36mproduct-composite_1  |[0m Authorities:
+[36mproduct-composite_1  |[0m [ADMIN]
+[36mproduct-composite_1  |[0m Adding new ProductCategory id 1
+[36mproduct-composite_1  |[0m ##################### Token found: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.314  INFO 1 --- [nio-8004-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: category-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.326 DEBUG 1 --- [nio-8004-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [POST /products, headers=[authorization:"bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg", accept:"application/json, application/*+json", content-type:"application/json;charset=UTF-8", user-agent:"Java/1.8.0_275", x-forwarded-host:"zuul-server:8081", x-forwarded-proto:"http", x-forwarded-prefix:"/productscomposite-service", x-forwarded-port:"8081", x-forwarded-for:"172.18.0.2", accept-encoding:"gzip", content-length:"88", host:"172.18.0.8:8004", connection:"Keep-Alive"]]
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.388  INFO 1 --- [nio-8004-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-category-core-service
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.389  INFO 1 --- [nio-8004-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: category-core-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=category-core-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.400  INFO 1 --- [nio-8004-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.441  INFO 1 --- [nio-8004-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: category-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.443  INFO 1 --- [nio-8004-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client category-core-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=category-core-service,current list of Servers=[172.18.0.7:category-core-service:9dc2ddf651ced1cf893dc45ef91ee3e4],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+[36mproduct-composite_1  |[0m },Server stats: [[Server:172.18.0.7:category-core-service:9dc2ddf651ced1cf893dc45ef91ee3e4;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 00:00:00 GMT 1970;	First connection made: Thu Jan 01 00:00:00 GMT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+[36mproduct-composite_1  |[0m ]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@507eb0f3
+[36mproduct-composite_1  |[0m Beju22##################### Token found: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.563  INFO 1 --- [nio-8004-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: products-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.570  INFO 1 --- [nio-8004-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-products-core-service
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.570  INFO 1 --- [nio-8004-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: products-core-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=products-core-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.571  INFO 1 --- [nio-8004-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.578  INFO 1 --- [nio-8004-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: products-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:37.579  INFO 1 --- [nio-8004-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client products-core-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=products-core-service,current list of Servers=[172.18.0.6:products-core-service:108533e90c3b1dba2e1324bbaa2ea269],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+[36mproduct-composite_1  |[0m },Server stats: [[Server:172.18.0.6:products-core-service:108533e90c3b1dba2e1324bbaa2ea269;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 00:00:00 GMT 1970;	First connection made: Thu Jan 01 00:00:00 GMT 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+[36mproduct-composite_1  |[0m ]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@551465a0
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.335  WARN 1 --- [nio-8004-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: I/O error while reading input message; nested exception is org.apache.catalina.connector.ClientAbortException: java.io.EOFException: Unexpected EOF read on the socket]
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.342 DEBUG 1 --- [nio-8004-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : POST /products, headers=[authorization:"bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg", accept:"application/json, application/*+json", content-type:"application/json;charset=UTF-8", user-agent:"Java/1.8.0_275", x-forwarded-host:"zuul-server:8081", x-forwarded-proto:"http", x-forwarded-prefix:"/productscomposite-service", x-forwarded-port:"8081", x-forwarded-for:"172.18.0.2", accept-encoding:"gzip", content-length:"88", host:"172.18.0.8:8004", connection:"Keep-Alive"]]
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.419  INFO 1 --- [erListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: category-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.485 ERROR 1 --- [nio-8004-exec-3] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:105) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176) ~[spring-security-oauth2-2.3.4.RELEASE.jar!/:na]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:179) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m Caused by: java.io.IOException: Broken pipe
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1253) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:717) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:707) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:572) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1195) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:399) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	... 81 common frames omitted
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.572  INFO 1 --- [erListUpdater-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: products-core-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[36mproduct-composite_1  |[0m Beju33Category product ids2021-01-11 07:33:38.677 DEBUG 1 --- [nio-8004-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : REQUEST DATA : POST /products, headers=[authorization:"bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1xZXlwT1RXblgxUkhHaGtObDBRKy9teFA3VG9jTzN4RFlrWmNvQkRvZjA9In0.eyJleHAiOjE2MTAzOTM1NzUsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI3YzMyZTU2ZC01NmZlLTRlNzMtOTZlNC1iMzI1N2RlYjlhMmEiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.V3dIYii9x5gla9VbHDK0SXzCBCAVIRz9UhoN4P02OtoPsusCGHQJU7VK2uiKDoryLymrypk2QE8lqoaPuHsKVfWDnuUQ9zQfefZqBx8Kb4h-gjBpHRBo7FUq6dHoOWOSuzLfGw87-k7eh3kgG_CiTmj5vo54xhfZscyDT6oY523iveQqA9aCqBWmqYP9peictXJ33DizV5uLKP37BXJrTe_3mX3qwpUSmE5hMsvn4WIUgfXAB1eQoy-gcrbH3krzXCbGrKJLNkxf0nGkmiCEq0bwiTStD1tC9439Ce3N3YIzeMVBpR6yyI_V8FxL4V5hZPpGagqLODbO4omywz0NYg", accept:"application/json, application/*+json", content-type:"application/json;charset=UTF-8", user-agent:"Java/1.8.0_275", x-forwarded-host:"zuul-server:8081", x-forwarded-proto:"http", x-forwarded-prefix:"/productscomposite-service", x-forwarded-port:"8081", x-forwarded-for:"172.18.0.2", accept-encoding:"gzip", content-length:"88", host:"172.18.0.8:8004", connection:"Keep-Alive"], payload={"id":null,"name":"test2","price":10.0,"categoryId":1,"details":"test3","category":null}]
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.681 ERROR 1 --- [nio-8004-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m java.lang.NullPointerException: null
+[36mproduct-composite_1  |[0m 	at de.hska.productcomposite.ProductCompositeClient.createProduct(ProductCompositeClient.java:188) ~[classes!/:0.0.1-SNAPSHOT]
+[36mproduct-composite_1  |[0m 	at de.hska.productcomposite.ProductCompositeClient$$FastClassBySpringCGLIB$$26c2e799.invoke(<generated>) ~[classes!/:0.0.1-SNAPSHOT]
+[36mproduct-composite_1  |[0m 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at de.hska.productcomposite.ProductCompositeClient$$EnhancerBySpringCGLIB$$38cf8d20.createProduct(<generated>) ~[classes!/:0.0.1-SNAPSHOT]
+[36mproduct-composite_1  |[0m 	at de.hska.productcomposite.ProductCompositeController.addProduct(ProductCompositeController.java:70) ~[classes!/:0.0.1-SNAPSHOT]
+[36mproduct-composite_1  |[0m 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176) ~[spring-security-oauth2-2.3.4.RELEASE.jar!/:na]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.3.5.RELEASE.jar!/:2.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m 2021-01-11 07:33:38.716 ERROR 1 --- [nio-8004-exec-2] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+[36mproduct-composite_1  |[0m 
+[36mproduct-composite_1  |[0m org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:105) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:277) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.39.jar!/:4.0.FR]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176) ~[spring-security-oauth2-2.3.4.RELEASE.jar!/:na]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.5.RELEASE.jar!/:5.3.5.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.10.RELEASE.jar!/:5.2.10.RELEASE]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m Caused by: java.io.IOException: Broken pipe
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[na:1.8.0_111-internal]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:152) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1253) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:717) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:707) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:572) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1195) [tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:399) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.39.jar!/:9.0.39]
+[36mproduct-composite_1  |[0m 	... 82 common frames omitted
+[36mproduct-composite_1  |[0m 

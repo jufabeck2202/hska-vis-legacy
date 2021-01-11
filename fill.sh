@@ -13,6 +13,7 @@ curl -X POST --location "http://localhost:8001/users/" \
 
 json=$(curl -X POST --location "http://webshop:secret@localhost:8001/oauth/token" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password&username=admin&password=admin&scope=write")
 token=$( jq -r ".access_token" <<<"$json" )
+
 echo ""
 echo $token
 echo

@@ -39,18 +39,12 @@ public class AddProductAction extends ActionSupport {
 			try {
 				Product product = new Product(name, Double.parseDouble(price), Long.valueOf(categoryId),
 						details);
-				System.out.println("1");
 				Product response = oAuth2RestTemplate.postForObject(ADD_PRODUCT_URL, product, Product.class);
-				System.out.println("2");
-				System.out.print(response.getName());
-				int productId = Math.toIntExact(response.getId());
-				System.out.println("3");
-				System.out.println(productId);
+				
 
 
-				if (productId > 0) {
+
 					result = "success";
-				}
 			} catch (Exception e) {
 				System.out.println(e);
 				e.printStackTrace();

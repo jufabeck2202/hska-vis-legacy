@@ -163,18 +163,20 @@ public class ProductCompositeClient {
 	public Product createProduct(Product prod) {
 		long categoryId = prod.getCategoryId();
 		ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+categoryId), Category.class);
+		//Erstellen neues Category object
 		Category category = c.getBody();
-		System.out.print("22");
-
-		if (category == null) {return null;}
+		System.out.print("Beju22");
 		
+		if (category == null) {return null;}
+		//neues product
 		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
-		System.out.print("33");
+
+		
+		//add id to product
 		category.setProductIds(category.getProductIds().concat((category.getProductIds().isEmpty()? "":","))+newProduct.getId().toString());
-		System.out.print("44");
-		//update Category
+		
+		//Send Request
 		restTemplate.put(CATEGORIES_URI.concat("/"+categoryId), category);
-		System.out.print("55");
 		return newProduct;
 	}
 	
@@ -194,11 +196,10 @@ public class ProductCompositeClient {
 			if (accessToken == null)
 			{
 				//throw new IOException("Token not set");
-				System.out.println("##################### Token not set! ###################");
+				System.out.println("Error: Token not set");
 			}
 			else
 			{
-				System.out.println("##################### Token found: " + accessToken);
 				HttpHeaders headers = request.getHeaders();
 				headers.add(HttpHeaders.AUTHORIZATION, "bearer " + accessToken);
 			}
