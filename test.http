@@ -98,14 +98,16 @@ Cache-Control: no-cache
 GET http://localhost:8001/users/1
 Cache-Control: no-cache
 ####
+curl webshop:secret@localhost:8001/oauth/token -d grant_type=password -d username=pape123 -d password=pape123 -d scope=write
+###
 POST   http://localhost:8001/users/
 content-type: application/json
 
 {
-   "username": "beju",
+   "username": "pape123",
   "firstname": "be",
    "lastname": "ju",
-  "password": "kickerking",
+  "password": "pape123",
   "roletype": "admin",
   "rolelevel": 1
 }
@@ -151,6 +153,7 @@ Cache-Control: no-cache
 ####
 
 GET http://localhost:8081/productscomposite-service/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5tSEN3QXhjNnorb1EyYnc0cTg1T3FqK0M2RWl6cG5hMnZnYUhsbUVXN2M9In0.eyJleHAiOjE2MTAyNDM2ODYsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MjAxODY3Zi1lMDdkLTRiNzItOWM4ZC03ZThiZWQwOTU1MTYiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.FtoplR7_jHg3P9uu4FumPENkQaXLib065-yJ3oBLAmDIbMOj00bkgASXPLyIZvLqCI0_yElqaK7vNRYsndiU5KWmM9gwjFTfSdIO_gK9nASAJZm7wx9ju56OtKCYHsS5zjWnz8I1yiGK46Zr2rD8c4ufaciwEfvHT1jMdVDEFXp3pmryKOPQuHbOLig2KulbuH3VhUayP7dBQE7ANSn-qKOF9EEmwVLu8QXbEgGZPkgX_P_1OzACwksipEQMxHiRI_5QpeEO7hhLKagW6AGi_IIspoq_9NGSroPDkOEx--S4XOP4xw9XkrG6cFyyybFsvD9ntFGuehLfFvvO8S5wsA
 Cache-Control: no-cache
 ####
 
@@ -159,6 +162,7 @@ Cache-Control: no-cache
 
 ####
 POST  http://localhost:8081/productscomposite-service/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5tSEN3QXhjNnorb1EyYnc0cTg1T3FqK0M2RWl6cG5hMnZnYUhsbUVXN2M9In0.eyJleHAiOjE2MTAyNDM2ODYsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MjAxODY3Zi1lMDdkLTRiNzItOWM4ZC03ZThiZWQwOTU1MTYiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.FtoplR7_jHg3P9uu4FumPENkQaXLib065-yJ3oBLAmDIbMOj00bkgASXPLyIZvLqCI0_yElqaK7vNRYsndiU5KWmM9gwjFTfSdIO_gK9nASAJZm7wx9ju56OtKCYHsS5zjWnz8I1yiGK46Zr2rD8c4ufaciwEfvHT1jMdVDEFXp3pmryKOPQuHbOLig2KulbuH3VhUayP7dBQE7ANSn-qKOF9EEmwVLu8QXbEgGZPkgX_P_1OzACwksipEQMxHiRI_5QpeEO7hhLKagW6AGi_IIspoq_9NGSroPDkOEx--S4XOP4xw9XkrG6cFyyybFsvD9ntFGuehLfFvvO8S5wsA
 content-type: application/json
 
 {
@@ -169,6 +173,7 @@ content-type: application/json
 }
 ####
 POST  http://localhost:8081/productscomposite-service/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5tSEN3QXhjNnorb1EyYnc0cTg1T3FqK0M2RWl6cG5hMnZnYUhsbUVXN2M9In0.eyJleHAiOjE2MTAyNDM2ODYsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MjAxODY3Zi1lMDdkLTRiNzItOWM4ZC03ZThiZWQwOTU1MTYiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.FtoplR7_jHg3P9uu4FumPENkQaXLib065-yJ3oBLAmDIbMOj00bkgASXPLyIZvLqCI0_yElqaK7vNRYsndiU5KWmM9gwjFTfSdIO_gK9nASAJZm7wx9ju56OtKCYHsS5zjWnz8I1yiGK46Zr2rD8c4ufaciwEfvHT1jMdVDEFXp3pmryKOPQuHbOLig2KulbuH3VhUayP7dBQE7ANSn-qKOF9EEmwVLu8QXbEgGZPkgX_P_1OzACwksipEQMxHiRI_5QpeEO7hhLKagW6AGi_IIspoq_9NGSroPDkOEx--S4XOP4xw9XkrG6cFyyybFsvD9ntFGuehLfFvvO8S5wsA
 content-type: application/json
 
 {
@@ -201,6 +206,7 @@ GET https://example.com/comments?page=2&pageSize=10
 
 ###
 POST http://localhost:8081/category-core-service/categories 
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5tSEN3QXhjNnorb1EyYnc0cTg1T3FqK0M2RWl6cG5hMnZnYUhsbUVXN2M9In0.eyJleHAiOjE2MTAyNDM2ODYsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MjAxODY3Zi1lMDdkLTRiNzItOWM4ZC03ZThiZWQwOTU1MTYiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.FtoplR7_jHg3P9uu4FumPENkQaXLib065-yJ3oBLAmDIbMOj00bkgASXPLyIZvLqCI0_yElqaK7vNRYsndiU5KWmM9gwjFTfSdIO_gK9nASAJZm7wx9ju56OtKCYHsS5zjWnz8I1yiGK46Zr2rD8c4ufaciwEfvHT1jMdVDEFXp3pmryKOPQuHbOLig2KulbuH3VhUayP7dBQE7ANSn-qKOF9EEmwVLu8QXbEgGZPkgX_P_1OzACwksipEQMxHiRI_5QpeEO7hhLKagW6AGi_IIspoq_9NGSroPDkOEx--S4XOP4xw9XkrG6cFyyybFsvD9ntFGuehLfFvvO8S5wsA
 content-type: application/json
 
 {
@@ -220,6 +226,7 @@ content-type: application/json
 
 ###
 GET  http://localhost:8081/category-core-service/categories 
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5tSEN3QXhjNnorb1EyYnc0cTg1T3FqK0M2RWl6cG5hMnZnYUhsbUVXN2M9In0.eyJleHAiOjE2MTAyNDM2ODYsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI4MjAxODY3Zi1lMDdkLTRiNzItOWM4ZC03ZThiZWQwOTU1MTYiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.FtoplR7_jHg3P9uu4FumPENkQaXLib065-yJ3oBLAmDIbMOj00bkgASXPLyIZvLqCI0_yElqaK7vNRYsndiU5KWmM9gwjFTfSdIO_gK9nASAJZm7wx9ju56OtKCYHsS5zjWnz8I1yiGK46Zr2rD8c4ufaciwEfvHT1jMdVDEFXp3pmryKOPQuHbOLig2KulbuH3VhUayP7dBQE7ANSn-qKOF9EEmwVLu8QXbEgGZPkgX_P_1OzACwksipEQMxHiRI_5QpeEO7hhLKagW6AGi_IIspoq_9NGSroPDkOEx--S4XOP4xw9XkrG6cFyyybFsvD9ntFGuehLfFvvO8S5wsA
 content-type: application/json
 
 ###

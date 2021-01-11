@@ -24,12 +24,17 @@ import de.hska.usercore.model.UserRepo;
 public class UserCoreController {
 	@Autowired
 	private UserRepo repo;
-	//@Autowired
-	//private PasswordEncoder encoder;
+	
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user) {
+		System.out.println("NewUser");
+		System.out.println(user.getFirstname());
+
+		user.setPassword(encoder.encode(user.getPassword()));
 		user = repo.save(user);
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
 	}
@@ -56,6 +61,7 @@ public class UserCoreController {
 	public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody User user) {
 		User userlocal = repo.findById(userId).orElse(null);
 		if(user != null && userlocal != null && userlocal.getId()  == user.getId()) {
+			user.setPassword(encoder.encode(user.getPassword()));
 			repo.save(user);
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);

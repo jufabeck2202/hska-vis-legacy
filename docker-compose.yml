@@ -82,7 +82,7 @@ services:
       services-network-01:
         aliases:
           - turbine
-  zuul:
+  zuul-server:
     build: zuul/
     ports: 
       - 8081:8081
@@ -91,6 +91,17 @@ services:
       - product-composite
     links:
       - eureka
+    networks:
+      services-network-01:
+        aliases:
+          - zuul
+  client:
+    build:
+      context: client/
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8000:8000"
     networks:
       services-network-01:
         aliases:

@@ -1,0 +1,59 @@
+# curl webshop:secret@localhost:8001/oauth/token -d grant_type=password -d username=pape123 -d password=pape123 -d scope=write
+### Create user
+POST   http://localhost:8001/users/
+content-type: application/json
+
+{
+   "username": "beju",
+  "firstname": "be",
+   "lastname": "ju",
+  "password": "beju",
+  "roletype": "admin",
+  "rolelevel": 0
+}
+### Log User in
+POST http://webshop:secret@localhost:8001/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=beju&password=beju&scope=write
+
+### wir gehen über zuul.
+GET http://localhost:8081/productscomposite-service/products/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Img2WU1Xai8zYmRxSWRCTm1kSStJdWlZQUhPcUdpTGlzZGJHVFgrZXRsaTQ9In0.eyJleHAiOjE2MTAzOTc0NDEsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiIxYzYyMzFhNC0wYjJiLTQ2OWMtODc5MC1iMzNhMDczYmYwNmUiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.Fy7Q6kz34-oXFeCeGdWMaBlq19BEw8Wpab9Sz4VINsdqXuo1btG3ic1DsKc0ceLMfaJskbZF5HJ7i63hLvc4-3Emz_KwB0pNFF_IU70AKdJlBkjGH-etzzlog9snF5FooMXXRWNzslAs4RWhiJYPhdQtnAEiSL7hvgAueC--PnULSOSbXc8WGVQR4N5YhK5gfG9YZqkwJY_0MxkDEoPqpNuTH235veGUMoly0PguXuD-yee0lShpicWsmRuB166NT9WnPnX2xIVGWb-VZQPI3MzKQhhaNX1dbSTpMiCTPZyCqm0RCGnWhRpz7etV2F1MXBX03qtFPzIFTFNKEqGLVg
+Cache-Control: no-cache
+###
+POST http://localhost:8081/category-core-service/categories 
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Img2WU1Xai8zYmRxSWRCTm1kSStJdWlZQUhPcUdpTGlzZGJHVFgrZXRsaTQ9In0.eyJleHAiOjE2MTAzOTc0NDEsInVzZXJfbmFtZSI6ImJlanUiLCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiIxYzYyMzFhNC0wYjJiLTQ2OWMtODc5MC1iMzNhMDczYmYwNmUiLCJjbGllbnRfaWQiOiJ3ZWJzaG9wIiwic2NvcGUiOlsid3JpdGUiXX0.Fy7Q6kz34-oXFeCeGdWMaBlq19BEw8Wpab9Sz4VINsdqXuo1btG3ic1DsKc0ceLMfaJskbZF5HJ7i63hLvc4-3Emz_KwB0pNFF_IU70AKdJlBkjGH-etzzlog9snF5FooMXXRWNzslAs4RWhiJYPhdQtnAEiSL7hvgAueC--PnULSOSbXc8WGVQR4N5YhK5gfG9YZqkwJY_0MxkDEoPqpNuTH235veGUMoly0PguXuD-yee0lShpicWsmRuB166NT9WnPnX2xIVGWb-VZQPI3MzKQhhaNX1dbSTpMiCTPZyCqm0RCGnWhRpz7etV2F1MXBX03qtFPzIFTFNKEqGLVg
+content-type: application/json
+
+{
+    "name": "Kaffee",
+    "productIds": ""
+}
+
+###
+POST   http://localhost:8001/users/
+content-type: application/json
+
+{
+   "username": "admin",
+  "firstname": "admin",
+   "lastname": "admin",
+  "password": "admin",
+  "roletype": "admin",
+  "rolelevel": 0
+}
+### Log User in
+POST http://webshop:secret@localhost:8001/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=admin&password=admin&scope=write
+###
+POST http://localhost:8081/category-core-service/categories 
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Img2WU1Xai8zYmRxSWRCTm1kSStJdWlZQUhPcUdpTGlzZGJHVFgrZXRsaTQ9In0.eyJleHAiOjE2MTAzOTgwMDYsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiQURNSU4iXSwianRpIjoiNTZlYjkwZWEtMjBmYy00ZDE2LWI4NGMtNDNmZjdmOTQ3NmYwIiwiY2xpZW50X2lkIjoid2Vic2hvcCIsInNjb3BlIjpbIndyaXRlIl19.cSkrCgSZ0-lDbPaPh77RY1FfJoKmqusnrHZC0qJHCDDgdoq-Dxn03UfPTF-HRN0odqMCTcZmuc-mOEMi6T9HgC2bqxn0f4dYE9nz67IaFGcINYun3rCAKmLaF3N6rXOi4gYs69piMKkJmEVoQknPqUYdh9_ta1m0RQS1qXGGkyfSuvVVzBi6B6I08bWD3FRuwIbCZYZBaaNS_c7r8cin0jnuUcsvsw77fB_K-BEj4-o3Dj6h47KVixTcbCr5YowN3A1ciPTEnUP6pUgIpRnbbLeuTLnysQ-VGcuj3UXu-aZ7U3crDpUwFL2_zPKsCKMP8J5Yk4axDnZVSknUueNyqQ
+content-type: application/json
+
+{
+    "name": "kaffe 3",
+    "productIds": ""
+}

@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -27,9 +28,9 @@ import org.springframework.http.HttpHeaders;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
-
-import de.hska.productcomposite.model.Product;
 import de.hska.productcomposite.model.Category;
+import de.hska.productcomposite.model.Product;
+
 
 @Component
 public class ProductCompositeClient {
@@ -47,6 +48,12 @@ public class ProductCompositeClient {
 	
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	private String accessToken = null;
+	
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
 	
 	@HystrixCommand(fallbackMethod = "getProductsCache", 
 			commandProperties = { @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "2") })
@@ -72,6 +79,7 @@ public class ProductCompositeClient {
 			productDescCache.putIfAbsent(p.getId(), p.getDetails());
 			productPriceCache.putIfAbsent(p.getId(), p.getPrice());
 		}
+		accessToken = null;
 		return prod.getBody();
 	}
 	
@@ -149,19 +157,54 @@ public class ProductCompositeClient {
 			}
 		}
 		restTemplate.delete(CATEGORIES_URI.concat("/"+id));
+		accessToken = null;
 	}
 	
 	public Product createProduct(Product prod) {
 		long categoryId = prod.getCategoryId();
 		ResponseEntity<Category> c = restTemplate.getForEntity(CATEGORIES_URI.concat("/"+categoryId), Category.class);
+		//Erstellen neues Category object
 		Category category = c.getBody();
+		System.out.print("Beju22");
+		
 		if (category == null) {return null;}
-
+		//neues product
 		Product newProduct = restTemplate.postForObject(PRODUCTS_URI, prod, Product.class);
+
+		
+		//add id to product
 		category.setProductIds(category.getProductIds().concat((category.getProductIds().isEmpty()? "":","))+newProduct.getId().toString());
 		
-		//update Category
+		//Send Request
 		restTemplate.put(CATEGORIES_URI.concat("/"+categoryId), category);
 		return newProduct;
+	}
+	
+	@LoadBalanced
+	@Bean
+	public RestTemplate restTemplate() {
+	   RestTemplate restTemplate = new RestTemplate();
+	   restTemplate.getInterceptors().add(new OAuthInterceptor());
+	   return restTemplate;
+	}
+	class OAuthInterceptor implements ClientHttpRequestInterceptor
+	{
+
+		@Override
+		public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException
+		{
+			if (accessToken == null)
+			{
+				//throw new IOException("Token not set");
+				System.out.println("Error: Token not set");
+			}
+			else
+			{
+				HttpHeaders headers = request.getHeaders();
+				headers.add(HttpHeaders.AUTHORIZATION, "bearer " + accessToken);
+			}
+
+			return execution.execute(request, body);
+		}
 	}
 }
